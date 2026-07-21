@@ -1,0 +1,404 @@
+body {
+    background-color: rgb(238, 241, 243);
+    padding: 15px 30px;
+    max-width: 700px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 14px;
+}
+
+/* --- Configuração da Tabela Fantasma de Layout --- */
+.tabela-impressao-layout {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.tabela-impressao-layout td {
+    padding: 0;
+    border: none;
+}
+
+/* --- Cabeçalho Institucional (Logo + Texto da Prefeitura) --- */
+.cabecalho-institucional {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.bloco-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.logo-sefaz {
+    max-width: 60px;
+    height: auto;
+    display: block;
+}
+
+.texto-prefeitura {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    line-height: 1.1;
+}
+
+.texto-prefeitura .pref {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.texto-prefeitura .cidade {
+    font-size: 22px;
+    font-weight: 900;
+    color: #000;
+}
+
+.texto-prefeitura .sub {
+    font-size: 11px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.cabecalho-institucional p {
+    margin: 2px 0;
+    font-size: 11px;
+    color: #444;
+}
+
+.cabecalho-institucional .coordenadoria {
+    font-weight: bold;
+    font-size: 12px;
+    color: #000;
+}
+
+h1 {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 12.5px;
+    text-align: justify;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #333;
+}
+
+h3, h4, h5, h6 {
+    font-size: 13px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* --- Bloco de Cláusulas Jurídicas --- */
+.secao-texto-legal {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    padding: 12px 0;
+}
+
+.secao-texto-legal p {
+    text-align: justify;
+    text-indent: 2.5em;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+/* --- Formulário e Campos --- */
+form {
+    background-color: white;
+    padding: 22px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.campo {
+    margin-bottom: 10px;
+}
+
+.linha .campo {
+    margin-bottom: 0;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* --- Caixa Expansível (Textarea) --- */
+textarea {
+    min-height: 40px;
+    field-sizing: content;
+    resize: none;
+    font-family: inherit;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* --- Estrutura de Linhas e Grids --- */
+.linha {
+    display: grid;
+    gap: 10px 10px; 
+    width: 100%;
+    margin-bottom: 10px;
+}
+    
+.tres-colunas { grid-template-columns: 1fr 1fr 1fr; }
+.duas-colunas { grid-template-columns: 1fr 1fr; }
+.coluna-doisdois { grid-template-columns: 1fr 1fr; }
+
+/* --- Checkboxes de Sistemas (Contadoria) --- */
+.grid-checklists {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dividido em 2 colunas para os 4 itens da contadoria */
+    gap: 12px 10px;                     
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.item-check {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.item-check input[type="checkbox"] {
+    width: auto !important;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* --- Bloco de Encerramento Visual (Tela) --- */
+.bloco-encerramento {
+    margin-top: 40px;
+}
+
+.campo campo-data-centralizada {
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+#data-termo {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.secao-assinatura {
+    align-items: flex-end;
+    margin-top: 40px;
+}
+
+.campo-assinatura {
+    text-align: center;
+}
+
+.linha-assinatura {
+    border-top: 1px solid #000;
+    width: 90%;
+    margin: 0 auto 5px;
+}
+
+.campo-assinatura label {
+    font-size: 11px;
+    font-weight: bold;
+    color: #222;
+    display: block;
+    line-height: 1.2;
+}
+
+/* --- Configuração do Rodapé na Tela --- */
+.espacador-rodape {
+    display: none;
+}
+
+.rodape-versao {
+    text-align: center; 
+    font-size: 10px; 
+    color: #555; 
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* --- Botão PDF --- */
+.botao-pdf {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+    transition: background-color 0.2s;
+}
+
+.botao-pdf:hover {
+    background-color: #004085;
+}
+
+
+/* ==========================================
+   CONFIGURAÇÕES DE IMPRESSÃO (PDF DUAS PÁGINAS) 
+   ========================================== */
+@media print {
+    @page {
+        margin: 1.2cm 1.5cm;
+    }
+
+    .botao-pdf {
+        display: none !important;
+    }
+    
+    body {
+        background-color: white !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        font-size: 13px !important;
+        position: relative;
+        min-height: 100%;
+    }
+    
+    form {
+        background-color: white !important;
+        padding: 0 !important;
+    }
+
+    input, textarea {
+        padding: 7px !important;
+        font-size: 13px !important;
+    }
+
+    /* Remove as setinhas dos seletores no PDF */
+    select {
+        padding: 7px !important;
+        font-size: 13px !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        background-image: none !important;
+    }
+
+    .cabecalho-institucional {
+        margin-bottom: 12px !important;
+    }
+
+    .bloco-logo {
+        margin-bottom: 8px !important;
+    }
+
+    .secao-texto-legal {
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        padding: 10px 0 !important;
+    }
+
+    .secao-texto-legal p {
+        font-size: 11.5px !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+        text-indent: 2.5em !important;
+    }
+
+    .linha, .grid-checklists {
+        gap: 8px 10px !important;
+        margin-bottom: 8px !important;
+    }
+
+    h1 {
+        margin-top: 8px !important;
+        margin-bottom: 12px !important;
+        font-size: 13px !important;
+    }
+
+    h2 {
+        font-size: 11.5px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 12px !important;
+    }
+
+    h3 {
+        margin-top: 20px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .item-check {
+        font-size: 12px !important;
+    }
+
+    #detalhe-outros {
+        height: 25px !important;
+        padding: 2px 5px !important;
+    }
+
+    textarea {
+        min-height: 35px !important;
+    }
+
+    .bloco-encerramento {
+        margin-top: 45px !important;
+        page-break-inside: avoid !important; /* Impede que as assinaturas se dividam entre as páginas */
+    }
+
+    .campo-data-centralizada {
+        margin-bottom: 60px !important;
+    }
+    
+    .linha-assinatura {
+        width: 92% !important;
+    }
+
+    /* --- MECANISMO DE MARGEM SUPERIOR DO RODAPÉ NO PDF --- */
+    .espacador-rodape {
+        display: block !important;
+        height: 25px;
+        width: 100%;
+    }
+
+    .rodape-versao {
+        margin-top: 0 !important;
+        font-size: 9.5px !important;
+        text-align: center !important;
+        color: #555 !important;
+        border-top: 1px solid #eee;
+        padding-top: 5px;
+    }
+}
