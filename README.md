@@ -11,14 +11,21 @@ A aplicação tem como objetivo disponibilizar uma página com o conteúdo do te
 ```text
 termo-responsabilidade-sefaz/
 ├── src/                      # arquivos da interface do formulário
-│   ├── index.html            # estrutura principal da página
-│   └── style.css             # estilos visuais da aplicação
+│   ├── assets/               # arquivos estáticos compartilhados
+│   ├── termo-contadoria/     # interface do termo da contadoria
+│   └── termo-responsabilidade/ # interface do termo de responsabilidade
 ├── Dockerfile                # imagem Docker usada para servir a aplicação
 ├── docker-compose.yml        # configuração do container e da porta
 ├── nginx.conf                # configuração do servidor Nginx
 ├── .env                      # variáveis de ambiente, incluindo a porta
 └── .dockerignore             # arquivos ignorados na criação da imagem
 ```
+
+## Endpoints de acesso
+
+- `/` — acesso ao termo de responsabilidade
+- `/responsabilidade/` — acesso ao termo de responsabilidade
+- `/contadoria/` — acesso ao termo da contadoria
 
 ## Como subir na máquina virtual
 
