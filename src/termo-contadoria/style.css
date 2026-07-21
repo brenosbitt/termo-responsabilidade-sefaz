@@ -400,5 +400,26 @@ textarea {
         color: #555 !important;
         border-top: 1px solid #eee;
         padding-top: 5px;
+
+        @page {
+        size: A4 portrait !important; /* Força folha A4 na vertical */
+        margin: 1.2cm 1.5cm !important; /* Define margens padronizadas */
+    }
+
+    /* 2. Trava a largura da estrutura web exatamente na largura de um A4 */
+    html, body {
+        width: 210mm !important; /* LARGURA FIXA DE A4 EM MILÍMETROS */
+        margin: 0 auto !important;
+        padding: 0 !important;
+        background-color: #ffffff !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* 3. Garante que a tabela que envolve o formulário ocupe 100% da largura A4 */
+    .tabela-impressao-layout {
+        width: 100% !important;
+    }
+
     }
 }
