@@ -12,14 +12,15 @@
 
     <!-- Estrutura de Tabela para Repetição Nativa do Rodapé no PDF -->
     <table class="tabela-impressao-layout">
-        
+
         <!-- O tfoot é impresso automaticamente no fim de TODAS as páginas -->
         <tfoot>
             <tr>
                 <td>
                     <div class="espacador-rodape"></div>
                     <p class="rodape-versao">
-                        Versão 2.0 – Política de Segurança da Informação – PSI (Instrução Normativa nº 01/2024 /CTIT/SEFAZ)
+                        Versão 2.0 – Política de Segurança da Informação – PSI (Instrução Normativa nº 01/2024
+                        /CTIT/SEFAZ)
                     </p>
                 </td>
             </tr>
@@ -32,34 +33,41 @@
 
                     <div class="cabecalho-institucional">
                         <div class="bloco-logo">
-                            <img src="../assets/logo_prefeitura_de_maceio.png" alt="Brasão de Maceió" class="logo-sefaz">
+                            <img src="../assets/logo_prefeitura_de_maceio.png" alt="Brasão de Maceió"
+                                class="logo-sefaz">
                             <div class="texto-prefeitura">
                                 <span class="pref">PREFEITURA DE</span>
                                 <span class="cidade">MACEIÓ</span>
                                 <span class="sub">SEFAZ</span>
                             </div>
                         </div>
-                        
+
                         <p class="coordenadoria">Coordenadoria Geral de Tecnologia da Informação e Telecomunicações</p>
                         <p class="endereco">Rua Pedro Monteiro, nº 47, CEP 57020-380, Centro, Maceió – AL</p>
                         <p class="contato">Tel.: (082)3312-5071, CNPJ. 19.164.089/0001-50</p>
                     </div>
 
-                    <h1>TERMO DE RESPONSABILIDADE E CONFIDENCIALIDADE DE ACESSO AOS SERVIÇOS TECNOLÓGICOS DA CONTADORIA DA SEFAZ</h1>
-                    <h2>Pelo presente Termo, o usuário declara estar ciente das responsabilidades decorrentes da concessão de acesso aos recursos tecnológicos institucionais disponibilizados pela Secretaria Municipal de Fazenda – SEFAZ, comprometendo-se a utilizar as credenciais de acesso de forma pessoal, exclusiva, sigilosa e em conformidade com as normas institucionais, responsabilizando-se por sua guarda, sigilo e uso adequado.</h2>
+                    <h1>TERMO DE RESPONSABILIDADE E CONFIDENCIALIDADE DE ACESSO AOS SERVIÇOS TECNOLÓGICOS DA CONTADORIA
+                        DA SEFAZ</h1>
+                    <h2>Pelo presente Termo, o usuário declara estar ciente das responsabilidades decorrentes da
+                        concessão de acesso aos recursos tecnológicos institucionais disponibilizados pela Secretaria
+                        Municipal de Fazenda – SEFAZ, comprometendo-se a utilizar as credenciais de acesso de forma
+                        pessoal, exclusiva, sigilosa e em conformidade com as normas institucionais,
+                        responsabilizando-se por sua guarda, sigilo e uso adequado.</h2>
 
                     <form id="termoForm">
-                  
-                        <div class="campo">  
+
+                        <div class="campo">
                             <label for="nome">Nome completo:</label><br>
                             <input type="text" id="nome" placeholder="Digite seu nome completo" required>
                         </div>
 
-                        <div class="linha duas-colunas">  
-                            <div class="campo"> 
+                        <div class="linha duas-colunas">
+                            <div class="campo">
                                 <label for="cpf">CPF:</label><br>
-                                <input type="text" id="cpf" placeholder="Digite seu CPF" required>
-                            </div> 
+                                <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14"
+                                    oninput="mascaraCPF(this)" required>
+                            </div>
 
                             <div class="campo">
                                 <label for="matricula">Matrícula:</label><br>
@@ -68,7 +76,7 @@
                         </div>
 
                         <div class="linha coluna-doisdois">
-                            <div class="campo"> 
+                            <div class="campo">
                                 <label for="secretaria">Secretaria:</label><br>
                                 <input type="text" id="secretaria" placeholder="Digite a secretaria" required>
                             </div>
@@ -80,14 +88,15 @@
                         </div>
 
                         <div class="linha duas-colunas">
-                            <div class="campo"> 
+                            <div class="campo">
                                 <label for="cargo">Cargo/Função:</label><br>
                                 <input type="text" id="cargo" placeholder="Digite seu cargo ou função" required>
                             </div>
 
                             <div class="campo">
                                 <label for="telefone">Telefone/Ramal:</label><br>
-                                <input type="text" id="telefone" placeholder="Digite o telefone ou ramal (opcional)">
+                                <input type="text" id="telefone" placeholder="(82) 99999-9999 / 1024"
+                                    oninput="filtrarTelefone(this)" required>
                             </div>
                         </div>
 
@@ -113,37 +122,71 @@
                         <h3>Recursos tecnológicos autorizados (assinale os que serão concedidos):</h3>
 
                         <div class="campo grid-checklists">
-                            <label class="item-check"><input type="checkbox" name="recursos" value="glpi"> GLPI Contadoria</label>
-                            <label class="item-check"><input type="checkbox" name="recursos" value="sigef"> SIGEF</label>
-                            <label class="item-check"><input type="checkbox" name="recursos" value="vpn"> Acesso Remoto / VPN</label>
-                            <label class="item-check"><input type="checkbox" name="recursos" value="rede"> Rede / Internet (SEFAZ)</label>
+                            <label class="item-check"><input type="checkbox" name="recursos" value="glpi"> GLPI
+                                Contadoria</label>
+                            <label class="item-check"><input type="checkbox" name="recursos" value="sigef">
+                                SIGEF</label>
+                            <label class="item-check"><input type="checkbox" name="recursos" value="vpn"> Acesso Remoto
+                                / VPN</label>
+                            <label class="item-check"><input type="checkbox" name="recursos" value="rede"> Rede /
+                                Internet (SEFAZ)</label>
                         </div>
 
                         <!-- Bloco de Cláusulas Contratuais da Contadoria da SEFAZ -->
                         <h3>RESPONSABILIDADES DO USUÁRIO</h3>
                         <div class="secao-texto-legal">
-                            <p>As credenciais de acesso concedidas pela Secretaria Municipal de Fazenda – SEFAZ constituem instrumento de uso institucional, possuem caráter pessoal, individual, sigiloso e intransferível e destinam-se exclusivamente ao desempenho das atribuições funcionais autorizadas. Ao assinar este Termo, o usuário declara estar ciente de suas responsabilidades e compromete-se a observar as seguintes condições:</p>
+                            <p>As credenciais de acesso concedidas pela Secretaria Municipal de Fazenda – SEFAZ
+                                constituem instrumento de uso institucional, possuem caráter pessoal, individual,
+                                sigiloso e intransferível e destinam-se exclusivamente ao desempenho das atribuições
+                                funcionais autorizadas. Ao assinar este Termo, o usuário declara estar ciente de suas
+                                responsabilidades e compromete-se a observar as seguintes condições:</p>
 
-                            <p><strong>I-</strong> Comunicar imediatamente ao Responsável da Contadoria Geral da SEFAZ qualquer suspeita de comprometimento, perda, divulgação indevida, bloqueio ou utilização não autorizada de suas credenciais de acesso, para adoção das providências cabíveis;</p>
+                            <p><strong>I-</strong> Comunicar imediatamente ao Responsável da Contadoria Geral da SEFAZ
+                                qualquer suspeita de comprometimento, perda, divulgação indevida, bloqueio ou utilização
+                                não autorizada de suas credenciais de acesso, para adoção das providências cabíveis;</p>
 
-                            <p><strong>II-</strong> Utilizar as credenciais de acesso e os recursos tecnológicos exclusivamente para o exercício de suas atribuições funcionais, observando a Lei Geral de Proteção de Dados Pessoais – LGPD (Lei nº 13.709/2018), a Lei de Acesso à Informação – LAI (Lei nº 12.527/2011), a Política de Segurança da Informação da SEFAZ e as demais normas aplicáveis;</p>
+                            <p><strong>II-</strong> Utilizar as credenciais de acesso e os recursos tecnológicos
+                                exclusivamente para o exercício de suas atribuições funcionais, observando a Lei Geral
+                                de Proteção de Dados Pessoais – LGPD (Lei nº 13.709/2018), a Lei de Acesso à Informação
+                                – LAI (Lei nº 12.527/2011), a Política de Segurança da Informação da SEFAZ e as demais
+                                normas aplicáveis;</p>
 
-                            <p><strong>III-</strong> Nos casos de desligamento, aposentadoria, exoneração, encerramento do vínculo, alteração de lotação ou mudança das atribuições do usuário que impliquem revisão dos acessos concedidos, caberá à chefia imediata ou à unidade administrativa responsável comunicar formalmente o fato ao Responsável da Contadoria Geral da SEFAZ, para que esta solicite à área técnica competente a alteração ou revogação das respectivas credenciais de acesso, sem prejuízo de igual comunicação pelo próprio usuário;</p>
+                            <p><strong>III-</strong> Nos casos de desligamento, aposentadoria, exoneração, encerramento
+                                do vínculo, alteração de lotação ou mudança das atribuições do usuário que impliquem
+                                revisão dos acessos concedidos, caberá à chefia imediata ou à unidade administrativa
+                                responsável comunicar formalmente o fato ao Responsável da Contadoria Geral da SEFAZ,
+                                para que esta solicite à área técnica competente a alteração ou revogação das
+                                respectivas credenciais de acesso, sem prejuízo de igual comunicação pelo próprio
+                                usuário;</p>
 
-                            <p><strong>IV-</strong> Utilizar as credenciais exclusivamente no exercício das atribuições para as quais foram concedidas, sendo vedada sua utilização para atividades não autorizadas pela Contadoria da SEFAZ;</p>
+                            <p><strong>IV-</strong> Utilizar as credenciais exclusivamente no exercício das atribuições
+                                para as quais foram concedidas, sendo vedada sua utilização para atividades não
+                                autorizadas pela Contadoria da SEFAZ;</p>
 
-                            <p><strong>V-</strong> É vedado compartilhar, emprestar, divulgar ou permitir a utilização das credenciais de acesso por terceiros, ainda que estes possuam autorização para utilização dos sistemas corporativos, sob pena de responsabilização administrativa, civil e penal;</p>
+                            <p><strong>V-</strong> É vedado compartilhar, emprestar, divulgar ou permitir a utilização
+                                das credenciais de acesso por terceiros, ainda que estes possuam autorização para
+                                utilização dos sistemas corporativos, sob pena de responsabilização administrativa,
+                                civil e penal;</p>
 
-                            <p><strong>VI-</strong> Constitui infração funcional e poderá caracterizar ilícito penal inserir ou facilitar a inserção de dados falsos, alterar ou excluir indevidamente informações, bem como modificar sistemas ou bancos de dados sem autorização da autoridade competente, sujeitando o infrator às sanções previstas na legislação vigente, inclusive às disposições dos artigos 313-A e 313-B do Código Penal Brasileiro;</p>
+                            <p><strong>VI-</strong> Constitui infração funcional e poderá caracterizar ilícito penal
+                                inserir ou facilitar a inserção de dados falsos, alterar ou excluir indevidamente
+                                informações, bem como modificar sistemas ou bancos de dados sem autorização da
+                                autoridade competente, sujeitando o infrator às sanções previstas na legislação vigente,
+                                inclusive às disposições dos artigos 313-A e 313-B do Código Penal Brasileiro;</p>
 
-                            <p><strong>VII-</strong> Utilizar os recursos tecnológicos de forma a preservar a confidencialidade, a integridade, a disponibilidade e a rastreabilidade das informações sob responsabilidade da Administração Pública;</p>
+                            <p><strong>VII-</strong> Utilizar os recursos tecnológicos de forma a preservar a
+                                confidencialidade, a integridade, a disponibilidade e a rastreabilidade das informações
+                                sob responsabilidade da Administração Pública;</p>
 
-                            <p><strong>VIII-</strong> Reconhecer que as operações realizadas nos sistemas corporativos poderão ser registradas por meio de trilhas de auditoria (logs), permitindo a identificação das ações executadas pelo usuário para fins de segurança da informação, controle interno, auditoria e apuração de responsabilidades.</p>
+                            <p><strong>VIII-</strong> Reconhecer que as operações realizadas nos sistemas corporativos
+                                poderão ser registradas por meio de trilhas de auditoria (logs), permitindo a
+                                identificação das ações executadas pelo usuário para fins de segurança da informação,
+                                controle interno, auditoria e apuração de responsabilidades.</p>
                         </div>
 
                         <!-- Bloco de Encerramento (Data + 3 Assinaturas Oficiais) -->
                         <div class="bloco-encerramento">
-                            
+
                             <div class="campo campo-data-centralizada">
                                 <div id="data-termo">Maceió - AL, <span id="data-hoje"></span></div>
                             </div>
@@ -171,7 +214,7 @@
                             <button type="submit" class="botao-pdf">Exportar para PDF</button>
                         </div>
 
-                    </form> 
+                    </form>
 
                 </td>
             </tr>
@@ -179,7 +222,7 @@
     </table>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const data = new Date();
             const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
             const elementoData = document.getElementById('data-hoje');
@@ -188,12 +231,27 @@
             }
 
             const form = document.getElementById('termoForm');
-            form.addEventListener('submit', function(event) {
-                event.preventDefault(); 
-                window.print();         
+            form.addEventListener('submit', function (event) {
+                event.preventDefault();
+                window.print();
             });
         });
+        function mascaraCPF(input) {
+            let valor = input.value;
+
+            valor = valor.replace(/\D/g, "");
+            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+            valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+            valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
+
+            input.value = valor;
+        }
+        function filtrarTelefone(input) {
+            // Remove tudo que NÃO for número, parênteses, hífen, espaço ou barra
+            input.value = input.value.replace(/[^0-9()\- \/]/g, "");
+        }
     </script>
 
 </body>
+
 </html>
