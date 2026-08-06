@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Justificativa - SEFAZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Estrutura de Tabela para Repetição Nativa do Rodapé no PDF -->
+    <table class="tabela-impressao-layout">
+        
+        <!-- O tfoot é impresso automaticamente no fim de TODAS as páginas -->
+        <tfoot>
+            <tr>
+                <td>
+                    <div class="espacador-rodape"></div>
+                    <p class="rodape-versao">
+                        Coordenadoria de Gestão de Pessoas – CGP / SEFAZ – cgp@sefaz.maceio.al.gov.br
+                    </p>
+                </td>
+            </tr>
+        </tfoot>
+
+        <!-- O corpo da tabela carrega todo o seu formulário -->
+        <tbody>
+            <tr>
+                <td>
+
+                    <div class="cabecalho-institucional">
+                        <div class="bloco-logo">
+                            <img src="../assets/logo_prefeitura_de_maceio.png" alt="Brasão de Maceió" class="logo-sefaz">
+                            <div class="texto-prefeitura">
+                                <span class="pref">PREFEITURA DE</span>
+                                <span class="cidade">MACEIÓ</span>
+                                <span class="sub">SEFAZ</span>
+                            </div>
+                        </div>
+                        
+                        <p class="coordenadoria">Coordenadoria de Gestão de Pessoas - CGP</p>
+                        <p class="endereco">Rua Pedro Monteiro, nº 47, CEP 57020-380, Centro, Maceió – AL</p>
+                        <p class="contato">E-mail: cgp@sefaz.maceio.al.gov.br, CNPJ. 19.164.089/0001-50</p>
+                    </div>
+
+                    <h1>FORMULÁRIO DE JUSTIFICATIVA</h1>
+
+                    <form id="termoForm">
+                  
+                        <h3>1 - IDENTIFICAÇÃO DO SERVIDOR</h3>
+
+                        <div class="campo">  
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+                        </div>
+
+                        <div class="linha coluna-doisdois">  
+                            <div class="campo"> 
+                                <label for="matricula">Matrícula:</label><br>
+                                <input type="text" id="matricula" placeholder="Digite sua matrícula" required>
+                            </div> 
+
+                            <div class="campo">
+                                <label for="setor">Setor:</label><br>
+                                <input type="text" id="setor" placeholder="Digite o setor" required>
+                            </div>
+                        </div>
+
+                        <h3>2 - JUSTIFICATIVA</h3>
+
+                        <div class="linha coluna-doisdois grid-opcoes-justificativa">
+                            <div class="campo campo-opcao">
+                                <label class="item-check">
+                                    <input type="checkbox" name="tipo_justificativa" value="abonar"> 
+                                    <strong>Abonar</strong>
+                                </label>
+                                <div class="subcampo-dias">
+                                    <label for="dias-abonar">Dia(s):</label>
+                                    <input type="text" id="dias-abonar" placeholder="Ex: 12/08">
+                                </div>
+                            </div>
+
+                            <div class="campo campo-opcao">
+                                <label class="item-check">
+                                    <input type="checkbox" name="tipo_justificativa" value="compensar"> 
+                                    <strong>Compensar</strong>
+                                </label>
+                                <div class="subcampo-dias">
+                                    <label for="dias-compensar">Dia(s):</label>
+                                    <input type="text" id="dias-compensar" placeholder="Ex: 15/08 e 16/08">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label for="observacoes">Observações:</label><br>
+                            <textarea id="observacoes" rows="3" placeholder="Digite observações adicionais ou justificativas detalhadas..."></textarea>
+                        </div>
+
+                        <!-- Bloco de Texto Explicativo Legal -->
+                        <div class="secao-texto-legal">
+                            <p><strong>Os itens ABONAR E COMPENSAR referem-se a:</strong></p>
+                            <p><strong>ABONAR:</strong> poderão ser abonadas até duas faltas durante o mês, a critério do chefe imediato (falta não justificada);</p>
+                            <p><strong>COMPENSAR:</strong> será permitido ao servidor laborar até duas horas a mais ou a menos diariamente, para compensação, dentro da mesma quinzena e dentro do mesmo mês, sem prejuízo para o vencimento. O período de compensação será previamente acordado com a chefia imediata, observada a conveniência para o serviço.</p>
+                        </div>
+
+                        <!-- Bloco de Encerramento (Data + Assinaturas) -->
+                        <div class="bloco-encerramento">
+                            
+                            <div class="campo campo-data-centralizada">
+                                <div id="data-termo">Maceió - AL, <span id="data-hoje"></span></div>
+                            </div>
+
+                            <div class="linha coluna-doisdois secao-assinatura">
+                                <div class="campo campo-assinatura">
+                                    <div class="linha-assinatura"></div>
+                                    <label>Assinatura do Servidor</label>
+                                </div>
+
+                                <div class="campo campo-assinatura">
+                                    <div class="linha-assinatura"></div>
+                                    <label>Assinatura Chefia Imediata</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botão de tipo SUBMIT para ativar a validação padrão do navegador -->
+                        <div class="linha">
+                            <button type="submit" class="botao-pdf">Exportar para PDF</button>
+                        </div>
+
+                    </form> 
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const data = new Date();
+            const opcoes = { year: 'numeric', month: 'long', day: 'numeric' };
+            const elementoData = document.getElementById('data-hoje');
+            if (elementoData) {
+                elementoData.textContent = data.toLocaleDateString('pt-BR', opcoes);
+            }
+
+            const form = document.getElementById('termoForm');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                window.print();         
+            });
+        });
+    </script>
+
+</body>
+</html>
